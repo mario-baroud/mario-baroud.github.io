@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Baroud – Teaching</title>
+  <link rel="stylesheet" href="starter.css">
+  <style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .gallery-item {
+    flex: 1 1 250px;       /* Base width for each card */
+    max-width: 250px;       /* Prevents stretching beyond first few boxes */
+    background: rgba(44, 44, 44, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 300px; /* Adjust height for consistency */
+    border-radius: 8px;
+    margin-bottom: 8px;
+    object-fit: cover; /* keeps consistent sizing */
+  }
+
+  .caption {
+    font-family: 'Open Sans', sans-serif;
+    color: #f0f0f0;
+    font-size: 0.95rem;
+    flex-shrink: 0; /* prevents caption from shrinking */
+  }
+
+  /* Core Beliefs uses the same .section style as Pracs page */
+  .core-beliefs ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container" style="flex-direction: column; align-items: center; text-align: center;">
+      <h1 class="site-title">Mario Baroud – Teaching Portfolio</h1>
+      <nav>
+        <ul style="justify-content: center;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="teaching.html" class="active">Teaching</a></li>
+          <li><a href="pracs.html">Pracs</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <h1>Teaching</h1>
+    <p>Here are some moments from my tutoring sessions and workshops:</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="Images/mario-hsc-talk.jpeg" alt="Mario giving HSC talk">
+        <div class="caption">Giving HSC advice to Year 12 Maths Standard 2 students</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-tutoring-mck.jpg" alt="Tutoring at school">
+        <div class="caption">Tutoring at school</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-and-mikayla.jpg" alt="One-on-one tutoring session">
+        <div class="caption">One-on-one tutoring session</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-and-caelan.jpg" alt="First in maths">
+        <div class="caption">My student ranked first in maths in year 12</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-and-daniella.jpg" alt="Individual tutoring">
+        <div class="caption">Individual tutoring</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-and-emilia.jpg" alt="Past papers">
+        <div class="caption">Going through past papers</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Images/mario-and-aiden.jpg" alt="Most Improved award">
+        <div class="caption">My student achieved the "Most Improved" award for maths</div>
+      </div>
+    </div>
+
+    <!-- Core Beliefs Section -->
+    <div class="section core-beliefs">
+      <h2>Core Beliefs</h2>
+      <ul>
+        <li>Every student learns differently, so teaching should be adaptable and personalised.</li>
+        <li>Differentiation in the classroom is essential for student success.</li>
+        <li>All students have the right to ask questions.</li>
+        <li>A good teacher balances being firm with creating a friendly, supportive environment.</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mario Baroud</p>
+    </div>
+  </footer>
+
+</body>
+</html>

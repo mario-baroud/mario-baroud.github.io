@@ -1,0 +1,421 @@
+/* =====================================================
+   COMP208 starter.css (plug-and-play)
+   Purpose: Give you a clean visual baseline quickly.
+   How to use: Link this in <head> of every page:
+     <link rel="stylesheet" href="starter.css">
+   Tip: Read the comments and tweak values as you go.
+   ===================================================== */
+
+/* ---------- 1) CSS Reset / Base ----------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@200;300;400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;   /* Include padding & border in total size for all elements + pseudo-elements */
+}
+html, body { 
+  margin: 0;    /* Removes default browser margin */
+  padding: 0;   /* Removes default browser padding */
+}
+img { 
+  max-width: 100%;  /* Ensures images never exceed container width */
+  height: auto;     /* Maintains image aspect ratio */
+  display: block;   /* Removes small gap under images by making them block-level */
+}
+
+/* ---------- 2) Core Theme Tokens ----------- */
+:root {
+  --brand: #C59035;        /* primary colour */
+  --brand-2: #C59035;       /* accent colour */
+  --bg: #111111;           /* page background */
+  --head: #0FDE4B;         /* main header colour */
+  --text: #f0f0f0;         /* default text */
+  --muted: #666666;        /* secondary text */
+  --surface: #2c2c2c;      /* card/section bg */
+  --radius: 12px;          /* rounded corners */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);    /* Subtle shadow for depth */
+  --spacing: 16px;         /* base spacing unit */
+  --maxw: 1100px;          /* content width */
+  --font-body: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-head: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------- 3) Page Defaults --------------- */
+body {
+  background-color: #111111;           /* Dark background as fallback */
+  color: var(--text);                  /* Default text colour */
+  font-family: var(--font-body);       /* Body font */
+  line-height: 1.6;                    /* Spacing for readability */
+  position: relative;                  /* Needed for the pseudo-element overlay */
+}
+
+/* Subtle transparent background image */
+body::before {
+  content: "";
+  position: fixed;                     /* Stays in place when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('Images/background.jpg') center/cover no-repeat;
+  opacity: 0.05;                        /* 5% visibility */
+  z-index: -1;                          /* Behind all content */
+}
+
+.site-title { 
+  font-family: 'Poppins', sans-serif; /* Use Poppins for the main heading */
+  font-weight: 500;                   /* Slightly bolder than the 300 for other headings */
+  color: var(--brand);                /* Gold colour */
+  letter-spacing: 0.5px;          /* Slight spacing between letters */
+}
+main {
+  width: min(100% - 2*var(--spacing), var(--maxw));   /* Responsive content width */
+  margin: 32px auto;                                  /* Centers main content with spacing */
+}
+
+/* ---------- 4) Typography ------------------ */
+h1, h2, h3 {
+  font-family: var(--font-head);  /* Uses heading font */
+  font-weight: 300;
+  line-height: 1;                 /* Tight line spacing for headings */
+  margin: 0 0 0.6em;              /* Space below headings */
+  color: var(--brand);            /* Brand colour */
+}
+p { 
+  margin: 0 0 1.5em;                /* Space below paragraphs */
+  color: var(--text);             /* Standard text colour */
+  font-size: 0.95rem;             /* Slightly smaller than default font size */
+}
+small { 
+  color: var(--muted);            /* Muted grey colour for less emphasis */
+}
+
+/* ---------- 5) Links ----------------------- */
+a { 
+  color: #3399FF;          /* Brand colour for links */
+  text-decoration: none;        /* No underline by default */
+}
+a:hover, a:focus { 
+  text-decoration: none;   /* Underline on hover/focus for accessibility */
+  color: #66B2FF;
+}
+
+/* ---------- 6) Header / Nav ---------------- */
+header {  
+  background-color: #000000;       /* solid black background */
+  color: white;                    /* white text by default */
+  padding-top: 30px;           /* space above heading */
+  padding-bottom: 0px;        /* smaller space below nav */
+  box-shadow: var(--shadow);       /* subtle shadow for depth */
+}
+
+header .container {
+  width: min(100% - 2*var(--spacing), var(--maxw));  /* responsive width */
+  margin: 0 auto;                                   /* center horizontally */
+  display: flex;                                    /* horizontal layout */
+  flex-direction: column;                           /* stack heading above nav */
+  align-items: center;                              /* center content */
+  gap: 15px;                                        /* small gap between heading and nav */
+}
+
+header h1 {
+  margin: 0;                                        /* remove default margin */
+  padding: 0;
+  color: var(--brand);                              /* gold colour */
+  font-family: 'Poppins', sans-serif;              /* heading font */
+  font-weight: 300;                                 /* slightly bolder than extra-light */
+  font-size: 2rem;                                  /* adjust size as needed */
+  text-align: center;                               /* center the heading */
+}
+nav {
+  background: #111111;            /* Dark grey background for nav bar */
+  font-size: 0.95rem;             /* Slightly smaller font in navigation */
+  width: 100%;                    /* Spans full width */
+  margin: 32px auto;              /* Space above page content; no top gap */
+  margin-top: 0;                  /* Removes top gap above nav */
+}
+nav .container {
+  width: min(100% - 2*var(--spacing), var(--maxw));   /* Responsive container width */
+  margin: 0 auto;                                     /* Centers content horizontally */
+  display: flex;                        /* Layout: brand/left + links/right (if needed) */
+  align-items: center;                  /* Centers nav items */
+  justify-content: space-between;       /* Distribute items on the main axis with equal gaps between them; first/last items flush to container edges */
+}
+nav ul {
+  list-style: none;   /* Removes bullets */
+  display: flex;      /* Horizontal layout */
+  gap: 14px;          /* Space between links */
+  margin: 0;          /* Removes margin */
+  padding: 0;         /* Removes padding */
+}
+nav a {
+  display: block;         /* Larger click target */
+  color: white;         /* White link text */
+  text-decoration: none;  /* Remove underline/other decorations from text/links */
+  padding: 14px 16px;      /* Space inside link area */
+  border-radius: 8px;     /* Slightly rounded corners */
+  font-family: 'Open Sans', sans-serif;   /* Make nav links Open Sans */
+}
+nav a:hover { 
+  background: rgba(255,255,255,0.1);   /* Light background on hover */
+  color: var(--brand);
+}
+nav a:focus-visible {     
+  outline: 2px solid #fff;              /* white outline for increased accessibility/ keyboard-focus styling */
+  outline-offset: 2px;                    /* outline offset for increased accessibility/ keyboard-focus styling */
+}
+.active {
+  color: var(--brand);
+}
+@media (max-width: 640px) {               /* responsiveness for viewing on mobile */
+  nav .container { flex-wrap: wrap; }
+  nav ul { width: 100%; justify-content: center; }
+}
+
+/* ---------- 7) Sections -------------------- */
+.section {
+  background: rgba(44, 44, 44, 0.78);           /* Light background for section */
+  border-radius: var(--radius);         /* Rounded corners */
+  padding: calc(var(--spacing) * 1.25); /* Internal spacing */
+  margin: 18px 0;                       /* Vertical spacing */
+  box-shadow: var(--shadow);            /* Subtle shadow */
+}
+.section ol {
+  padding-left: 2.5em;  /* keeps numbers indented nicely */
+}
+
+.section ol li::marker {
+  color: var(--brand);  /* gold colour for numbers */
+  font-weight: 500;     /* slightly bolder numbers */
+}
+.profile {
+  display: flex;                  /* Enables horizontal flex layout (side-by-side arrangement) */
+  align-items: center;            /* Vertically centres items along the cross-axis */
+  gap: 20px;                      /* Adds 20px of space between text and image */
+}
+.profile-text {
+  flex: 1;                        /* Allows the text section to grow and fill available space */
+}
+.profile-photo {
+  display: block;                 /* Makes the image behave like a block element (so margin works) */
+  margin-left: auto;              /* Centres the image horizontally */
+  margin-right: auto;             /* Centres the image horizontally */
+  width: 20%;                     /* Limits the image width to 35% of its container */
+  border-radius: 8px;             /* Rounds the corners of the image slightly */
+}
+.main-photo { 
+  max-width: 250px;       /* resizes maximum width of these images within the sections */
+  width: 100%;            /* keeps proportions and maintains responsiveness */
+  height: auto;           /* Maintains aspect ratio */
+  padding-bottom: 25px;   /* Space below image so text isn’t too close */
+}
+.infographic, .sample-photo { 
+  max-width: 300px;       /* resizes maximum width of these images within the sections */
+  width: 100%;            /* keeps proportions and maintains responsiveness */
+  height: auto;           /* Maintains aspect ratio */
+  padding-bottom: 25px;   /* Space below image so text isn’t too close */
+}
+.embed-video {
+  padding-bottom: 25px;
+}
+table {
+  width: 100%;                
+  border-collapse: collapse;  
+  margin-top: 10px;           
+  font-family: Arial, sans-serif;     
+  background-color: rgba(44, 44, 44, 0.5);  /* Slightly transparent dark background */
+  color: #f0f0f0;             
+}
+
+thead {
+  background-color: #444;      /* Solid header background */
+  color: #ffffff;              
+  font-weight: bold;           
+}
+
+th, td {
+  border: 1px solid rgba(85, 85, 85, 0.7);  /* Slightly transparent border */
+  padding: 10px 12px;          
+  text-align: left;            
+}
+
+tbody tr {
+  background-color: rgba(44, 44, 44, 0.7);  /* Same transparency as table body */
+  color: #f0f0f0;
+}
+
+
+tr:nth-child(even) {
+  background-color: #2c2c2c;   /* Slightly lighter stripe for even rows */
+}
+
+.flex-container {
+  display: flex;                    /* Horizontal flex layout */
+  flex-wrap: wrap;                  /* Wraps to next line if needed */
+  gap: 20px;                        /* Space between items */
+  justify-content: space-between;   /* Space between items */
+  margin-top: 20px;                 /* Space above container */
+}
+.project-card {
+  flex: 1 1 350px;                /* Responsive card width */
+  background-color: #f9f9f9;    /* Light grey background */
+  border: 1px solid #ddd;       /* Light border */
+  padding: 15px;                  /* Space inside card */
+  border-radius: 8px;             /* Rounded corners */
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.1);      /* Soft shadow */
+}
+.project-card img {
+  width: 100%;          /* Image fills card width */
+  height: auto;         /* Maintains aspect ratio */
+  border-radius: 4px;   /* Slightly rounded image corners */
+}
+.project-card h3 {
+  margin-top: 10px;     /* Space above heading */
+  font-size: 1.1rem;    /* Slightly larger heading text */
+  color: #2c3e50;     /* Dark grey-blue colour */
+}
+
+/* ---------- 8) Cards / Gallery ------------- */
+.card-grid {
+  display: grid;                                                  /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));    /* Responsive columns */
+  gap: var(--spacing);                                            /* Space between grid items */
+}
+.card {
+  background: #fff;             /* White background */
+  border-radius: var(--radius);   /* Rounded corners */
+  box-shadow: var(--shadow);      /* Soft shadow */
+  overflow: hidden;               /* Hides overflowing content */
+  display: flex;                  /* Flex layout inside card */
+  flex-direction: column;         /* Stacks content vertically */
+}
+.card img { 
+  width: 100%;                  /* Image fills card */
+}
+.card .content { 
+  padding: var(--spacing);      /* Space around content */
+}
+.card h3 { 
+  margin-top: 0.4em;        /* Space above heading */
+  margin-bottom: 0.3em;     /* Space below heading */
+}
+.card p { 
+  color: var(--muted);      /* Muted text colour */
+  margin-bottom: 0.8em;     /* Space below paragraph */
+}
+.card a { display: block; }
+.card:hover { transform: translateY(-2px); transition: transform .15s ease; }
+
+
+/* ---------- 9) Forms ----------------------- */
+form {
+  display: grid;    /* Grid layout for form elements */
+  gap: 12px;        /* Space between form items */
+}
+label {
+  font-weight: 600;     /* Semi-bold labels */
+}
+input[type="text"], input[type="email"], textarea {
+  width: 100%;                    /* Full width fields */
+  padding: 10px 12px;             /* Internal spacing */
+  border: 1px solid #d4d7dd;    /* Light border */
+  border-radius: 10px;            /* Rounded corners */
+  background: #000000;           /* Black background */
+  transition: border-color 0.2s, box-shadow 0.2s;     /* Smooth focus effect */
+  color: #ffffff;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--brand);    /* Gold border highlight */
+  box-shadow: 0 0 0 3px rgba(197, 144, 53, 0.25); /* Gold glow */
+}
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #444;        /* Dark border */
+  border-radius: 10px;
+  background: #000000;           /* Black background */
+  color: #ffffff;                /* White text */
+  font-family: 'Open Sans', sans-serif;  /* Force Open Sans */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999999;                /* Light grey placeholder */
+  font-family: 'Open Sans', sans-serif;
+}
+button, input[type="submit"] {
+  background: var(--brand);   /* Brand colour */
+  color: white;             /* White text */
+  border: none;               /* No border */
+  padding: 10px 16px;         /* Internal spacing */
+  border-radius: 10px;        /* Rounded corners */
+  cursor: pointer;            /* Pointer on hover */
+}
+button:hover, 
+input[type="submit"]:hover,
+button:focus, 
+input[type="submit"]:focus {
+  opacity: 0.7;  /* Slightly transparent when hovered/focused */
+  outline: none; /* Remove default blue outline */
+}
+.error {
+  color: red;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ---------- 10) Footer --------------------- */
+footer {
+  margin-top: 40px;          /* Space above footer */
+  padding: 10px 0;           /* Vertical spacing */
+  background: var(--brand);  /* Brand background */
+  color: #cfd7ff;          /* Light text colour */
+}
+footer p {
+  color: white;     /* White paragraph text */
+}
+footer .container {
+  width: min(100% - 2*var(--spacing), var(--maxw));       /* Responsive width */
+  margin: 0 auto;                     /* Centered container */
+  display: flex;                      /* Flex layout */
+  justify-content: space-between;     /* Space between items */
+  gap: var(--spacing);                /* Gap between items */
+  flex-wrap: wrap;                    /* Allows wrapping on smaller screens */
+}
+
+/* ---------- 11) Utilities ------------------ */
+.text-center {            /* Utility class: centers text */
+  text-align: center;           /* Centers text horizontally */
+}
+.img-center {             /* Utility class: centers an image and scales it */
+  display: block;               /* Make the image a block element so margins can take effect */
+  margin-left: auto;            /* Auto left margin helps center horizontally */
+  margin-right: auto;           /* Auto right margin completes horizontal centering */
+  width: 40%;                   /* Scale image to 40% of its container’s width */
+}
+.m-0 { 
+  margin: 0 !important;         /* Removes margin */
+}
+.mt-1 { 
+  margin-top: 8px !important;   /* Small top margin */
+}
+.mt-2 { 
+  margin-top: 16px !important;  /* Medium top margin */
+}
+.mt-3 { 
+  margin-top: 24px !important;  /* Large top margin */
+}
+.p-1 { 
+  padding: 8px !important;      /* Small padding */
+}
+.p-2 { 
+  padding: 16px !important;     /* Medium padding */
+}
+.p-3 { 
+  padding: 24px !important;     /* Large padding */
+}
+
+/* End of starter.css */
