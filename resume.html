@@ -1,77 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mario Baroud – Resume</title>
-  <link rel="stylesheet" href="starter.css">
-  <style>
-    .resume-container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #111;
-      border-radius: 12px;
-      text-align: center;
-      color: white;
-    }
-    .resume-container h1 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    .resume-container p {
-      margin-bottom: 20px;
-    }
-    .download-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #000;
-      border: 2px solid white;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .download-btn:hover {
-      opacity: 0.7;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume – Mario Baroud</title>
+  <link rel="stylesheet" href="starter.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container" style="flex-direction: column; align-items: center; text-align: center;">
-      <h1 class="site-title">Mario Baroud – Teaching Portfolio</h1>
-      <nav>
-        <ul style="justify-content: center;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="pracs.html">Pracs</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html" class="active">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <section class="page-container">
+    <a href="index.html" class="exit-btn">×</a>
 
-  <!-- Main Content -->
-  <main>
-    <div class="resume-container">
-      <h1>My Teaching Resume</h1>
-      <p>You can view or download my teaching resume by clicking the button below.</p>
-      <a href="resume-at1.pdf" class="download-btn" target="_blank">📄 Download Resume</a>
-    </div>
-  </main>
+    <div class="content-box">
+      <h1>Resume</h1>
+      <p style="text-align:center; margin-bottom:20px; color:#ccc;">
+        View or download my resume below.
+      </p>
 
-  <!-- Footer -->
+      <!-- Resume Preview -->
+      <div style="text-align:center;">
+        <iframe src="resume-at3.pdf" style="width:100%; height:500px; border-radius:10px; border:none; box-shadow:0 4px 14px rgba(0,0,0,0.4);"></iframe>
+      </div>
+
+      <!-- Download Button -->
+      <div style="text-align:center; margin-top:20px;">
+        <a href="resume-at3.pdf" target="_blank" download
+           style="background-color:#C59035; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:600;">
+          Download Resume (PDF)
+        </a>
+      </div>
+
+      <!-- Small note -->
+      <p style="margin-top:25px; text-align:center; color:#aaa; font-size:0.9rem;">
+        Last updated: October 2024 | File: <strong>resume-at3.pdf</strong>
+      </p>
+    </div>
+  </section>
+
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Mario Baroud</p>
-    </div>
+    <p>&copy; 2025 Mario Baroud</p>
   </footer>
 
 </body>
