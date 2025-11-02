@@ -3,67 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mario Baroud – Home</title>
+  <title>Mario Baroud – Teaching Portfolio</title>
   <link rel="stylesheet" href="starter.css">
 </head>
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="container" style="flex-direction: column; align-items: center; text-align: center;">
-      <h1 class="site-title">Mario Baroud – Teaching Portfolio</h1>
-      <nav>
-        <ul style="justify-content: center;">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="pracs.html">Pracs</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main content -->
-  <main class="main-content">
-
+  <header class="hero">
     <!-- Profile Picture -->
-    <img src="Images/mario-pfp-2.PNG" alt="Mario Baroud Profile Picture" class="img-center mt-3" style="width:180px; height:180px; border-radius:50%; object-fit:cover; border:3px solid #C59035">
+    <img src="Images/mario-pfp-2.PNG" alt="Mario Baroud Profile Picture" class="profile-photo">
 
-    <!-- Info Boxes -->
-    <div class="section mt-3">
-      <h2>Professional Summary</h2>
-      <ul>
-        <li>Pre-service Mathematics and Computing Teacher</li>
-        <li>Learning Support Officer at Marist College Kogarah</li>
-        <li>Director of Baroud Education Mathematics Tutoring</li>
-      </ul>
+    <!-- Title and Subtitle -->
+    <h1 class="site-title">MARIO BAROUD - TEACHING PORTFOLIO</h1>
+    <p class="subtitle">Showcasing my teaching journey and beliefs as an educator</p>
+
+    <!-- Random Quote Generator -->
+    <div id="quote-box">
+      <p id="quote">"Education is the most powerful weapon you can use to change the world."</p>
+      <button id="new-quote">New Quote</button>
     </div>
 
-    <div class="section mt-3">
-  <h2>Professional Journey</h2>
-  <ol>
-    <li>Began tertiary studies at UTS in a Bachelor of Engineering (Software) and Bachelor of Medical Science (combined degree)</li>
-    <li>Discovered a passion for teaching through tutoring</li>
-    <li>Transitioned to a Bachelor of Education (Secondary) at ACU, specialising in Mathematics and Computing</li>
-    <li>Completed professional placements across Years 7–12 in Mathematics and Computing classrooms</li>
-    <li>Currently working as a Learning Support Officer at Marist College Kogarah</li>
-    <li>Director of Baroud Education, providing Mathematics tutoring and resources for high school students</li>
-  </ol>
-</div>
-
-
-  </main>
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="pracs.html">Pracs</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <!-- Footer -->
   <footer>
-    <div class="container text-center">
-      <p>&copy; 2025 Mario Baroud</p>
-    </div>
+    <p>&copy; 2025 Mario Baroud</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
