@@ -1,134 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mario Baroud – Teaching</title>
-  <link rel="stylesheet" href="starter.css">
-  <style>
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .gallery-item {
-    flex: 1 1 250px;       /* Base width for each card */
-    max-width: 250px;       /* Prevents stretching beyond first few boxes */
-    background: rgba(44, 44, 44, 0.8);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 300px; /* Adjust height for consistency */
-    border-radius: 8px;
-    margin-bottom: 8px;
-    object-fit: cover; /* keeps consistent sizing */
-  }
-
-  .caption {
-    font-family: 'Open Sans', sans-serif;
-    color: #f0f0f0;
-    font-size: 0.95rem;
-    flex-shrink: 0; /* prevents caption from shrinking */
-  }
-
-  /* Core Beliefs uses the same .section style as Pracs page */
-  .core-beliefs ul {
-    list-style-type: disc;
-    padding-left: 1.5em;
-    color: #f0f0f0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching – Mario Baroud</title>
+  <link rel="stylesheet" href="starter.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container" style="flex-direction: column; align-items: center; text-align: center;">
-      <h1 class="site-title">Mario Baroud – Teaching Portfolio</h1>
-      <nav>
-        <ul style="justify-content: center;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="teaching.html" class="active">Teaching</a></li>
-          <li><a href="pracs.html">Pracs</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
+  <section class="page-container">
+    <a href="index.html" class="exit-btn">×</a>
+
+    <div class="content-box">
+      <h1>Teaching</h1>
+      <p style="text-align:center; margin-bottom:24px; color:#ccc;">
+        Moments from tutoring, mentoring students, and giving talks.
+      </p>
+
+      <!-- Gallery -->
+      <div class="teaching-gallery">
+
+        <div class="gallery-item">
+          <img src="Images/mario-hsc-talk.jpeg" alt="Giving HSC advice talk" />
+          <p class="caption">Giving HSC advice to Year 12 Mathematics Standard 2 students</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="Images/mario-tutoring-mck.jpg" alt="Tutoring at school" />
+          <p class="caption">In-school tutoring and support</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="Images/mario-and-mikayla.jpg" alt="One-on-one tutoring" />
+          <p class="caption">One-on-one tutoring session</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="Images/mario-and-caelan.jpg" alt="Student achievement" />
+          <p class="caption">My student ranked first in Mathematics in Year 12</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="Images/mario-and-daniella.jpg" alt="Targeted tutoring" />
+          <p class="caption">Targeted individual support</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="Images/mario-and-emilia.jpg" alt="Exam prep" />
+          <p class="caption">Breaking down past exam papers together</p>
+        </div>
+
+      </div>
+
+      <!-- Core Beliefs -->
+      <div class="core-beliefs-box">
+        <h2>My Core Beliefs</h2>
+        <p>
+          For me, teaching is more than just sharing knowledge. It is about helping students become confident and curious thinkers. I believe every student should feel heard and motivated to take charge of their own learning. I work to build real relationships so students feel safe to take risks and make mistakes, since that is when real growth happens.
+        </p>
+
+        <p>
+          I think effective teaching starts with understanding each student’s background, interests, and goals. I try to adjust my lessons so every student, no matter their ability, can connect with mathematical ideas. Collaboration, reflection, and helpful feedback are key parts of my teaching. I use them to help students turn content into real understanding.
+        </p>
+
+        <p>
+          As a teacher, I see myself as a lifelong learner. I stay open to feedback, use new technology, and keep improving my teaching methods so I can stay current and meet students’ needs. My teaching is based on empathy, consistency, and clarity. These are the same values I want my students to develop.
+        </p>
+
+        <ul>
+          <li>Adjust teaching methods to support different learning needs.</li>
+          <li>Encourage a growth mindset and resilience by giving helpful feedback.</li>
+          <li>Design lessons that connect math to real-life situations.</li>
+          <li>Build a classroom where respect, teamwork, and curiosity are encouraged.</li>
         </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main content -->
-  <main>
-    <h1>Teaching</h1>
-    <p>Here are some moments from my tutoring sessions and workshops:</p>
-
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="Images/mario-hsc-talk.jpeg" alt="Mario giving HSC talk">
-        <div class="caption">Giving HSC advice to Year 12 Maths Standard 2 students</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-tutoring-mck.jpg" alt="Tutoring at school">
-        <div class="caption">Tutoring at school</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-and-mikayla.jpg" alt="One-on-one tutoring session">
-        <div class="caption">One-on-one tutoring session</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-and-caelan.jpg" alt="First in maths">
-        <div class="caption">My student ranked first in maths in year 12</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-and-daniella.jpg" alt="Individual tutoring">
-        <div class="caption">Individual tutoring</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-and-emilia.jpg" alt="Past papers">
-        <div class="caption">Going through past papers</div>
-      </div>
-      <div class="gallery-item">
-        <img src="Images/mario-and-aiden.jpg" alt="Most Improved award">
-        <div class="caption">My student achieved the "Most Improved" award for maths</div>
       </div>
     </div>
+  </section>
 
-    <!-- Core Beliefs Section -->
-    <div class="section core-beliefs">
-      <h2>Core Beliefs</h2>
-      <ul>
-        <li>Every student learns differently, so teaching should be adaptable and personalised.</li>
-        <li>Differentiation in the classroom is essential for student success.</li>
-        <li>All students have the right to ask questions.</li>
-        <li>A good teacher balances being firm with creating a friendly, supportive environment.</li>
-      </ul>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Mario Baroud</p>
-    </div>
+    <p>&copy; 2025 Mario Baroud</p>
   </footer>
-
 </body>
 </html>
