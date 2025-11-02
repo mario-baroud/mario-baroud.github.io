@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mario Baroud – Contact</title>
-  <link rel="stylesheet" href="starter.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Mario Baroud</title>
+  <link rel="stylesheet" href="starter.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container" style="flex-direction: column; align-items: center; text-align: center;">
-      <h1 class="site-title">Mario Baroud – Teaching Portfolio</h1>
-      <nav>
-        <ul style="justify-content: center;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="pracs.html">Pracs</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <section class="page-container">
+    <a href="index.html" class="exit-btn">×</a>
 
-  <!-- Main content -->
-  <main>
-    <section class="section mt-3">
-      <h2>Get in touch</h2>
-      <p><strong>Your details</strong></p>
-      <form action="#" method="post">
-        <label for="name">Full name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    <div class="content-box">
+      <h1>Contact</h1>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <p style="text-align:center; margin-bottom:24px; color:#ccc;">
+        If you’d like to get in touch, please fill out the form below.
+      </p>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
 
-        <input type="submit" value="Send">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="yourname@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-primary">Send Message</button>
+          <button type="reset" class="btn-reset">Reset</button>
+        </div>
       </form>
-    </section>
 
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Mario Baroud</p>
+      <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:#888;">
+        This form is for display purposes only.
+      </p>
     </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mario Baroud</p>
   </footer>
 
 </body>
